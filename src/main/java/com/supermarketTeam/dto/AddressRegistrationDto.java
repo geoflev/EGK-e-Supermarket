@@ -1,37 +1,36 @@
 package com.supermarketTeam.dto;
 
-
 import com.supermarketTeam.entities.User;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class AddressRegistrationDto {
-    
+
     @NotEmpty
     @Size(min = 1, max = 40)
     private String addressName;
-    
+
     @NotEmpty
     @Size(min = 1, max = 30)
     private String city;
-    
+
     @NotEmpty
     @Size(min = 1, max = 30)
     private String country;
-    
+
     @NotEmpty
-    @Size(min = 1, max = 12) 
+    @Size(min = 1, max = 12)
     private String postcode;
-     
+
     @NotEmpty
     @Size(min = 1, max = 12)
     private String telephone;
-    
+
     @NotEmpty
     @Size(max = 255)
     private String text;
-    
+
     @NotNull
     private User userId;
 
@@ -90,9 +89,5 @@ public class AddressRegistrationDto {
     public void setUserId(User userId) {
         this.userId = userId;
     }
-    
-    
-    
-    
-    
+
 }

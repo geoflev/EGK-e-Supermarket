@@ -1,4 +1,3 @@
-
 package com.supermarketTeam.controllers;
 
 import com.supermarketTeam.entities.Role;
@@ -15,24 +14,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-     @Autowired
+
+    @Autowired
     private UserServiceImpl userService;
-   
+
     @RequestMapping("/")
-    public String viewHomePage(Model model, HttpServletRequest request) {    
+    public String viewHomePage(Model model, HttpServletRequest request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetail = (UserDetails) auth.getPrincipal();
         User u = userService.findByUsername(userDetail.getUsername());
         request.getSession().setAttribute("userId", u.getId());
         request.getSession().setAttribute("userMail", u.getEmail());
         Role role = u.getRoles().iterator().next();
-        if(role.getName().equals("ROLE_ADMIN")){
-            return "productpage"; 
+        if (role.getName().equals("ROLE_ADMIN")) {
+            return "productpage";
         }
- 
+
         return "productpage";
     }
-    
-    
-    
+
 }

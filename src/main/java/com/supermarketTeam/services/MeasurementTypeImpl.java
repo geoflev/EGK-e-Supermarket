@@ -10,17 +10,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class MeasurementTypeImpl implements IMeasurementType{
+public class MeasurementTypeImpl implements IMeasurementType {
 
-    
     @Autowired
     private MeasurementTypeRepository mTypeRepo;
-    
+
     @Override
     public MeasurementType findById(int id) {
         return mTypeRepo.findById(id).get();
     }
-    
+
     @Override
     public List<MeasurementType> listAll() {
         return mTypeRepo.findAll();
@@ -41,12 +40,11 @@ public class MeasurementTypeImpl implements IMeasurementType{
     @Override
     public MeasurementType update(MeasurementType measurementType) {
         MeasurementType dbMType = mTypeRepo.findById(measurementType.getId()).get();
-        if(dbMType != null){
+        if (dbMType != null) {
             dbMType.setType(measurementType.getType());
             return mTypeRepo.save(measurementType);
         }
         return null;
     }
-    
-    
+
 }

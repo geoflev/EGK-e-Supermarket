@@ -68,8 +68,6 @@ public class MyOrder implements Serializable {
     public void setDate(LocalDate date) {
         this.date = date;
     }
-    
-    
 
     @Override
     public int hashCode() {
@@ -96,5 +94,4 @@ public class MyOrder implements Serializable {
         return "MyOrder{" + "id=" + id + ", totalAmount=" + totalAmount + ", date=" + date + '}';
     }
 
-   
 }

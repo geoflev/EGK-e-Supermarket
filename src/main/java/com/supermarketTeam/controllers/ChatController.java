@@ -8,7 +8,6 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 @Controller
 public class ChatController {
 
@@ -20,16 +19,15 @@ public class ChatController {
 
     @MessageMapping("/chat.addUser")
     @SendTo("/topic/public")
-    public ChatMessage addUser(@Payload ChatMessage chatMessage, 
-                               SimpMessageHeaderAccessor headerAccessor) {
-        // Add username in web socket session
+    public ChatMessage addUser(@Payload ChatMessage chatMessage,
+            SimpMessageHeaderAccessor headerAccessor) {
         headerAccessor.getSessionAttributes().put("username", chatMessage.getSender());
         return chatMessage;
     }
-    
-     @RequestMapping("/chat")
-      public String viewChat(){
-          return "chat";
-      }
+
+    @RequestMapping("/chat")
+    public String viewChat() {
+        return "chat";
+    }
 
 }

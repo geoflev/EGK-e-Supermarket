@@ -1,4 +1,4 @@
-package com.supermarketTeam.controllers.config;
+package com.supermarketTeam.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/static/**", "/registration","/welcome").permitAll()
+                .antMatchers("/static/**", "/registration", "/welcome").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -55,9 +55,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers(HttpMethod.GET,"/productrest/")
+                .antMatchers(HttpMethod.GET, "/productrest/")
                 .antMatchers(HttpMethod.POST, "/useraddress/pay**")
-                .antMatchers(HttpMethod.POST,"/orderrest");
+                .antMatchers(HttpMethod.POST, "/orderrest");
 
     }
 }

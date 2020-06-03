@@ -4,7 +4,7 @@ import com.supermarketTeam.entities.MyOrder;
 import java.util.List;
 
 public interface IMyOrderService {
-    
+
     public MyOrder findById(int id);
 
     public List<MyOrder> listAll();

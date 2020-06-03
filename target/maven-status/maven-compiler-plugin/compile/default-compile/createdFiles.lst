@@ -4,6 +4,7 @@ com/supermarketTeam/entities/Category.class
 com/supermarketTeam/services/ProductServiceImpl.class
 com/supermarketTeam/controllers/OrderRestController.class
 com/supermarketTeam/services/MeasurementTypeImpl.class
+com/supermarketTeam/config/PaypalConfig.class
 com/supermarketTeam/entities/MyOrder.class
 com/supermarketTeam/dao/CategoryRepository.class
 com/supermarketTeam/controllers/UserAddressController.class
@@ -15,10 +16,13 @@ com/supermarketTeam/services/IMyOrderService.class
 com/supermarketTeam/entities/Address.class
 com/supermarketTeam/services/CategoryServiceImpl.class
 com/supermarketTeam/dto/CategoryRegistrationDto.class
+com/supermarketTeam/config/WebSocketConfig.class
 com/supermarketTeam/dao/ProductRepository.class
 com/supermarketTeam/dao/AddressRepository.class
+com/supermarketTeam/EGKSupermarkets.class
 com/supermarketTeam/controllers/MeasurementTypeRestController.class
 com/supermarketTeam/entities/MeasurementType.class
+com/supermarketTeam/config/WebSecurityConfig.class
 com/supermarketTeam/dto/AddressRegistrationDto.class
 com/supermarketTeam/controllers/AddressController.class
 com/supermarketTeam/dao/RoleRepository.class
@@ -32,7 +36,6 @@ com/supermarketTeam/models/ChatMessage.class
 com/supermarketTeam/services/PaypalService.class
 com/supermarketTeam/dao/MyOrderRepository.class
 com/supermarketTeam/dao/MeasurementTypeRepository.class
-com/supermarketTeam/controllers/config/PaypalConfig.class
 com/supermarketTeam/controllers/CategoryRestController.class
 com/supermarketTeam/services/AddressServiceImpl.class
 com/supermarketTeam/controllers/ChatController.class
@@ -44,9 +47,7 @@ com/supermarketTeam/entities/Product.class
 com/supermarketTeam/services/SecurityServiceImpl.class
 com/supermarketTeam/services/IMeasurementType.class
 com/supermarketTeam/entities/Order.class
-com/supermarketTeam/controllers/config/WebSocketConfig.class
 com/supermarketTeam/services/MyOrderServiceImpl.class
-com/supermarketTeam/LeisureHotel4animalsApplication.class
 com/supermarketTeam/dto/ProductRegistrationDto.class
 com/supermarketTeam/ServletInitializer.class
 com/supermarketTeam/services/IProductService.class
@@ -55,6 +56,5 @@ com/supermarketTeam/models/ChatMessage$MessageType.class
 com/supermarketTeam/entities/User.class
 com/supermarketTeam/entities/Role.class
 com/supermarketTeam/controllers/LoginController.class
-com/supermarketTeam/controllers/config/WebSecurityConfig.class
 com/supermarketTeam/services/UserServiceImpl.class
 com/supermarketTeam/services/IAddressService.class

@@ -66,7 +66,7 @@ public class Product implements Serializable {
     @JoinColumn(name = "measurement_id", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)
     private MeasurementType measurementId;
-    @Column(name = "image", nullable = false)       
+    @Column(name = "image", nullable = false)
     private String image;
 
     public Product() {
@@ -181,5 +181,5 @@ public class Product implements Serializable {
     public String toString() {
         return "com.example.bbb.entities.Product[ id=" + id + " ]";
     }
-    
+
 }

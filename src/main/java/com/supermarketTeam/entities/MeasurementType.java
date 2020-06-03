@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "MeasurementType.findAll", query = "SELECT m FROM MeasurementType m")
     , @NamedQuery(name = "MeasurementType.findById", query = "SELECT m FROM MeasurementType m WHERE m.id = :id")
     , @NamedQuery(name = "MeasurementType.findByType", query = "SELECT m FROM MeasurementType m WHERE m.type = :type")})
-@JsonIgnoreProperties(value = { "productList" })
+@JsonIgnoreProperties(value = {"productList"})
 public class MeasurementType implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -106,5 +106,5 @@ public class MeasurementType implements Serializable {
     public String toString() {
         return "com.example.bbb.entities.MeasurementType[ id=" + id + " ]";
     }
-    
+
 }

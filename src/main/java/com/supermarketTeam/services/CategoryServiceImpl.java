@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class CategoryServiceImpl  implements ICategoryService{
+public class CategoryServiceImpl implements ICategoryService {
 
     @Autowired
     private CategoryRepository cateRepo;
@@ -28,7 +28,7 @@ public class CategoryServiceImpl  implements ICategoryService{
     @Override
     public Category save(CategoryRegistrationDto registration) {
         Category category = new Category();
-        
+
         category.setCategoryName(registration.getCategoryName());
         return cateRepo.save(category);
     }
@@ -41,13 +41,11 @@ public class CategoryServiceImpl  implements ICategoryService{
     @Override
     public Category update(Category category) {
         Category dbCategory = cateRepo.findById(category.getId()).get();
-        if(dbCategory != null) {
+        if (dbCategory != null) {
             dbCategory.setCategoryName(category.getCategoryName());
             return cateRepo.save(category);
         }
         return null;
     }
-    
 
-    
 }

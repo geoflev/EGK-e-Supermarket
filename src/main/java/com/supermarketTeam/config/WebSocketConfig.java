@@ -1,4 +1,4 @@
-package com.supermarketTeam.controllers.config;
+package com.supermarketTeam.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -14,13 +14,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         registry.addEndpoint("/ws").withSockJS();
     }
 
-  
-        
-   @Override
+    @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
         registry.setApplicationDestinationPrefixes("/app");
         registry.enableSimpleBroker("/topic");
     }
-        
 
 }

@@ -40,9 +40,9 @@ public class AppRestController {
         return product;
 
     }
-    
+
     @PostMapping(produces = "application/json", consumes = "application/json")
-       public Product saveProduct (@RequestBody ProductRegistrationDto registration) {
+    public Product saveProduct(@RequestBody ProductRegistrationDto registration) {
         return service.save(registration);
     }
 
@@ -68,4 +68,3 @@ public class AppRestController {
     }
 
 }
-

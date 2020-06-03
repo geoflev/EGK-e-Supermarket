@@ -42,8 +42,8 @@ public class AddressServiceImpl implements IAddressService {
     public void delete(Address address) {
         repo.delete(address);
     }
-    
-      @Override
+
+    @Override
     public Address update(Address address) {
         Address dbAddress = repo.findById(address.getId()).get();
         if (dbAddress != null) {
@@ -61,9 +61,9 @@ public class AddressServiceImpl implements IAddressService {
 
     @Override
     public Address createOrUpdate(Address address) {
-        if (address.getId()!= null) {
-          return  update(address);
-        } else {           
+        if (address.getId() != null) {
+            return update(address);
+        } else {
             Address addr = new Address();
             addr.setAddressName(address.getAddressName());
             addr.setCity(address.getCity());

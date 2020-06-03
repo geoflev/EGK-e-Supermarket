@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
     , @NamedQuery(name = "Category.findById", query = "SELECT c FROM Category c WHERE c.id = :id")
     , @NamedQuery(name = "Category.findByCategoryName", query = "SELECT c FROM Category c WHERE c.categoryName = :categoryName")})
-@JsonIgnoreProperties(value = { "productList" })
+@JsonIgnoreProperties(value = {"productList"})
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -107,5 +107,5 @@ public class Category implements Serializable {
     public String toString() {
         return "com.example.bbb.entities.Category[ id=" + id + " ]";
     }
-    
+
 }

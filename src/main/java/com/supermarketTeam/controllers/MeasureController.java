@@ -17,14 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-
 @Controller
 @RequestMapping("/mtype")
 public class MeasureController {
-    
+
     @Autowired
     private MeasurementTypeImpl measureService;
-    
 
     @RequestMapping("/")
     public String viewMeasurementPage(Model view) {
@@ -35,7 +33,7 @@ public class MeasureController {
 
     @RequestMapping("/new")
     public String newMeasureTypePage(Model model) {
-        MeasurementType mType = new MeasurementType();            
+        MeasurementType mType = new MeasurementType();
         model.addAttribute("mType", mType);
         return "newmtype";
     }
@@ -51,15 +49,15 @@ public class MeasureController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteMType(@PathVariable("id")int id, Model model) {
-    MeasurementType mType = measureService.findById(id);  
-    measureService.delete(mType);
-    return "redirect:/mtype/";
+    public String deleteMType(@PathVariable("id") int id, Model model) {
+        MeasurementType mType = measureService.findById(id);
+        measureService.delete(mType);
+        return "redirect:/mtype/";
     }
- 
+
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String editMType(ModelMap view, @PathVariable int id) {
-        MeasurementType mType = measureService.findById(id); 
+        MeasurementType mType = measureService.findById(id);
         view.addAttribute("mType", mType);
         return ("editmtype");
     }

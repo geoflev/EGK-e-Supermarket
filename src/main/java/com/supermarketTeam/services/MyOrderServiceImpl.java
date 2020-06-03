@@ -1,4 +1,3 @@
-
 package com.supermarketTeam.services;
 
 import com.supermarketTeam.dao.MyOrderRepository;
@@ -11,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
-public class MyOrderServiceImpl implements IMyOrderService{
+public class MyOrderServiceImpl implements IMyOrderService {
 
     @Autowired
     private MyOrderRepository myOrderRepo;
-    
+
     @Override
     public MyOrder findById(int id) {
         return myOrderRepo.findById(id).get();
@@ -23,7 +22,7 @@ public class MyOrderServiceImpl implements IMyOrderService{
 
     @Override
     public List<MyOrder> listAll() {
-         return myOrderRepo.findAll();
+        return myOrderRepo.findAll();
     }
 
     @Override
@@ -43,11 +42,11 @@ public class MyOrderServiceImpl implements IMyOrderService{
     @Override
     public MyOrder update(MyOrder myOrder) {
         MyOrder dbmyOrder = myOrderRepo.findById(myOrder.getId()).get();
-        if(dbmyOrder != null){
+        if (dbmyOrder != null) {
             dbmyOrder.setTotalAmount(myOrder.getTotalAmount());
             return myOrderRepo.save(myOrder);
         }
         return null;
     }
-    
+
 }

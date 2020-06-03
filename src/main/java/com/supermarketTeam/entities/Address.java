@@ -16,7 +16,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-
 @Entity
 @Table(name = "addresses", catalog = "supermarket", schema = "")
 @XmlRootElement
@@ -173,5 +172,5 @@ public class Address implements Serializable {
     public String toString() {
         return "com.example.bbb.entities.Address[ id=" + id + " ]";
     }
-    
+
 }

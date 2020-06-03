@@ -1,4 +1,3 @@
-
 package com.supermarketTeam.validation;
 
 import com.supermarketTeam.entities.User;
@@ -11,6 +10,7 @@ import org.springframework.validation.Validator;
 
 @Component
 public class UserValidator implements Validator {
+
     @Autowired
     private UserService userService;
 
@@ -22,19 +22,19 @@ public class UserValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         User user = (User) o;
-        
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "NotEmpty");
-         
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastName", "NotEmpty");
-         
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
-        if(!user.getEmail().matches("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")){
+        if (!user.getEmail().matches("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")) {
             errors.rejectValue("email", "Mail.userForm.email");
         }
-        if(userService.findByEmail(user.getEmail()) != null){
-             errors.rejectValue("email", "Duplicate.userForm.email");
+        if (userService.findByEmail(user.getEmail()) != null) {
+            errors.rejectValue("email", "Duplicate.userForm.email");
         }
-        
+
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "NotEmpty");
         if (user.getUsername().length() < 6 || user.getUsername().length() > 32) {
             errors.rejectValue("username", "Size.userForm.username");

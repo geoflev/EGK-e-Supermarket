@@ -39,9 +39,9 @@ public class MeasurementTypeRestController {
         MeasurementType mType = serviceMType.findById(id);
         return mType;
     }
-    
+
     @PostMapping(produces = "application/json", consumes = "application/json")
-       public MeasurementType saveMType (@RequestBody MeasurementTypeRegistrationDto registration) {
+    public MeasurementType saveMType(@RequestBody MeasurementTypeRegistrationDto registration) {
         return serviceMType.save(registration);
     }
 
@@ -59,4 +59,3 @@ public class MeasurementTypeRestController {
     }
 
 }
-

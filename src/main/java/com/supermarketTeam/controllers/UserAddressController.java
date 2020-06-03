@@ -28,7 +28,7 @@ public class UserAddressController {
         Address address = null;
         if (!user.getAddressList().isEmpty()) {
             address = user.getAddressList().get(0);
-        }else {
+        } else {
             address = new Address();
         }
         view.addAttribute("address", address);

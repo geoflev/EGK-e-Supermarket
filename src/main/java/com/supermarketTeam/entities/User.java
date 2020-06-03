@@ -1,5 +1,5 @@
 package com.supermarketTeam.entities;
- 
+
 import java.util.Collection;
 import java.util.List;
 import javax.persistence.*;
@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -14,11 +15,11 @@ public class User {
     private String username;
 
     private String password;
-    
+
     private String firstName;
-    
+
     private String lastName;
-    
+
     private String email;
 
     @Transient
@@ -32,7 +33,7 @@ public class User {
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
     private Collection<Role> roles;
-    
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private List<Address> addressList;
 
@@ -100,7 +101,6 @@ public class User {
         this.email = email;
     }
 
-
     public List<Address> getAddressList() {
         return addressList;
     }
@@ -109,5 +109,4 @@ public class User {
         this.addressList = addressList;
     }
 
-   
 }

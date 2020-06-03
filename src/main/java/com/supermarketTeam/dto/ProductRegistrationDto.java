@@ -6,34 +6,32 @@ import javax.validation.constraints.NotNull;
 import com.supermarketTeam.entities.Category;
 import com.supermarketTeam.entities.MeasurementType;
 
-
-
 public class ProductRegistrationDto {
 
-   @NotEmpty
-   private String name;
+    @NotEmpty
+    private String name;
 
-   @NotEmpty
+    @NotEmpty
     private String brand;
 
-   @NotNull
-   private int quantity;
+    @NotNull
+    private int quantity;
 
-   @NotNull
-   private double price;
+    @NotNull
+    private double price;
 
-  @NotNull
-   private boolean bio;
+    @NotNull
+    private boolean bio;
 
     @NotNull
     private Category categoryId;
-    
+
     @NotNull
     private MeasurementType measurementId;
 
     @NotEmpty
     private String image;
-    
+
     public String getName() {
         return name;
     }
@@ -98,7 +96,4 @@ public class ProductRegistrationDto {
         this.measurementId = measurementId;
     }
 
-   
-    
-   
 }

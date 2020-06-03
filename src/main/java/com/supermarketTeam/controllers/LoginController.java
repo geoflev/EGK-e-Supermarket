@@ -1,5 +1,5 @@
-
 package com.supermarketTeam.controllers;
+
 import com.supermarketTeam.entities.User;
 import com.supermarketTeam.services.SecurityService;
 import com.supermarketTeam.services.UserService;
@@ -10,10 +10,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-
-
 @Controller
 public class LoginController {
+
     @Autowired
     private UserService userService;
 
@@ -44,16 +43,18 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
-        if (error != null)
+        if (error != null) {
             model.addAttribute("error", "Your username and password is invalid.");
-        if (logout != null)
+        }
+        if (logout != null) {
             model.addAttribute("message", "You have been logged out successfully.");
+        }
         return "login";
     }
 
-    @GetMapping({ "/welcome"})
+    @GetMapping({"/welcome"})
     public String welcome(Model model) {
         return "welcome";
     }
-    
+
 }

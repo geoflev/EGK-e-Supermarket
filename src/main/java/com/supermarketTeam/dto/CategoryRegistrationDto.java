@@ -2,13 +2,12 @@ package com.supermarketTeam.dto;
 
 import javax.validation.constraints.NotEmpty;
 
-
 public class CategoryRegistrationDto {
-    
+
     @NotEmpty
     private String categoryName;
-    
-       public String getCategoryName() {
+
+    public String getCategoryName() {
         return categoryName;
     }
 
@@ -16,4 +15,3 @@ public class CategoryRegistrationDto {
         this.categoryName = categoryName;
     }
 }
-
