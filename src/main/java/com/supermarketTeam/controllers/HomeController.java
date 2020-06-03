@@ -30,7 +30,7 @@ public class HomeController {
             return "productpage";
         }
 
-        return "productpage";
+        return "welcome";
     }
 
 }
