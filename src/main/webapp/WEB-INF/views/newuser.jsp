@@ -18,7 +18,7 @@
                 margin : auto;
                 font-weight:700;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
@@ -31,7 +31,7 @@
         <div class="generic-container">
             <h2>Register a new User</h2>
             <br>
-            <form:form   method="POST" action="new" modelAttribute="user" class="form-horizontal">
+            <form:form id="form" method="POST" action="new" modelAttribute="user" class="form-horizontal">
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="username">Username</label>
@@ -52,7 +52,8 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="firstName">First Name</label>
                         <div class="col-md-7">
-                            <form:input type="text" path="firstName" class="form-control input-sm" maxlength="45" required="required"/>
+                            <form:input type="text" id="firstName" path="firstName" class="form-control input-sm" maxlength="45" required="required"/>
+                            <div id="error"></div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +61,7 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="lastName">Last Name</label>
                         <div class="col-md-7">
-                            <form:input type="text" path="lastName" class="form-control input-sm" maxlength="45" required="required"/>
+                            <form:input type="text" id="lastName" path="lastName" class="form-control input-sm" maxlength="45" required="required"/>
                         </div>
                     </div>
                 </div>
@@ -77,5 +78,26 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            const firstname = document.getElementById("firstName")
+            const lastname = document.getElementById("lastName")
+            const form = document.getElementById("form")
+            const errorElement = document.getElementById("error")
+
+            form.addEventListener("submit", (e) => {
+                let messages = [];
+                var letters = /^[A-Za-z]+$/;
+                if (!firstname.value.match(letters)) {
+                    e.preventDefault();
+                    messages.push("First Name can't contain numbers")
+                    errorElement.innerText = messages;
+                }
+                if (!lastname.value.match(letters)) {
+                    e.preventDefault();
+                    messages.push("Last Name can't contain numbers")
+                    errorElement.innerText = messages;
+                }
+            })
+        </script>
     </body>
 </html>
