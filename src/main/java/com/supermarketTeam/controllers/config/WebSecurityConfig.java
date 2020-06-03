@@ -55,8 +55,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring()
-                .antMatchers(HttpMethod.POST, "/paypal/pay/**")
-                .antMatchers(HttpMethod.GET,"/productrest/");
+                .antMatchers(HttpMethod.GET,"/productrest/")
+                .antMatchers(HttpMethod.POST, "/useraddress/pay**")
+                .antMatchers(HttpMethod.POST,"/orderrest");
 
     }
 }

@@ -12,30 +12,31 @@ import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
 import com.supermarketTeam.entities.Order;
 import com.supermarketTeam.services.PaypalService;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/paypal")
+
 public class PaypalController {
 
 	@Autowired
 	PaypalService service;
+        
+     
 
-	public static final String SUCCESS_URL = "pay/success";
-	public static final String CANCEL_URL = "pay/cancel";
+	public static final String SUCCESS_URL = "paypal/pay/success";
+	public static final String CANCEL_URL = "paypal/pay/cancel";
 
-	@GetMapping("/")
+	@GetMapping("/paypal")
 	public String home() {
             
 		return "payout";
 	}
 
-	@PostMapping("/pay")
+	@PostMapping("/useraddress/pay")
 	public String payment(@ModelAttribute("order") Order order) {
 		try {
 			Payment payment = service.createPayment(order.getPrice(), order.getCurrency(), order.getMethod(),
-					order.getIntent(), order.getDescription(), "http://localhost:8084/ProductBoot/paypal/" + CANCEL_URL,
-					"http://localhost:8084/ProductBoot/paypal/" + SUCCESS_URL);
+					order.getIntent(), order.getDescription(), "http://localhost:8084/ProductBoot/" + CANCEL_URL,
+					"http://localhost:8084/ProductBoot/" + SUCCESS_URL);
 			for(Links link:payment.getLinks()) {
 				if(link.getRel().equals("approval_url")) {
 					return "redirect:"+link.getHref();
@@ -59,7 +60,7 @@ public class PaypalController {
 	        try {
 	            Payment payment = service.executePayment(paymentId, payerId);
 	            System.out.println(payment.toJSON());
-	            if (payment.getState().equals("approved")) {
+	            if (payment.getState().equals("approved")) {                 
 	                return "success";
 	            }
 	        } catch (PayPalRESTException e) {

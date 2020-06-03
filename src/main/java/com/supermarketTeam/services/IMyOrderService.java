@@ -1,6 +1,5 @@
 package com.supermarketTeam.services;
 
-import com.supermarketTeam.dto.MyOrderRegistrationDto;
 import com.supermarketTeam.entities.MyOrder;
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface IMyOrderService {
 
     public List<MyOrder> listAll();
 
-    public MyOrder save(MyOrderRegistrationDto myOrderDtoi);
+    public MyOrder save(MyOrder myOrder);
 
     public void delete(MyOrder myOrder);
 

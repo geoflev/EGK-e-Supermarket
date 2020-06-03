@@ -28,5 +28,28 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <jsp:include page="footer.jsp" />
+        <script>
+            console.log(sessionStorage.getItem("paypalamount"),typeof sessionStorage.getItem("paypalamount"));
+        </script>
+        <script>
+            function postPaypalAmount() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "http://localhost:8084/ProductBoot/orderrest", true);
+
+                xhr.onload = function () {
+                    if (this.status == 200) {
+                        var graphData = JSON.parse(xhr.responseText);
+                        console.log(graphData,"SUCCESS");
+                    }
+                };
+                var item = Number(sessionStorage.getItem("paypalamount"));
+                console.log(item);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.send(JSON.stringify({"totalAmount":item,"date":"2020-08-01"}));
+            }
+            $(document).ready(function () {
+                postPaypalAmount();
+            });
+        </script>
     </body>
 </html>

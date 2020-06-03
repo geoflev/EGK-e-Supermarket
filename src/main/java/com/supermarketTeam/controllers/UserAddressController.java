@@ -43,7 +43,7 @@ public class UserAddressController {
             return "useraddress";
         }
         service.createOrUpdate(address);
-        return ("redirect:/address/");
+        return "payout";
     }
 
 }

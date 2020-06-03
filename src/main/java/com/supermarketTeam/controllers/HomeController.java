@@ -24,12 +24,13 @@ public class HomeController {
         UserDetails userDetail = (UserDetails) auth.getPrincipal();
         User u = userService.findByUsername(userDetail.getUsername());
         request.getSession().setAttribute("userId", u.getId());
+        request.getSession().setAttribute("userMail", u.getEmail());
         Role role = u.getRoles().iterator().next();
         if(role.getName().equals("ROLE_ADMIN")){
             return "productpage"; 
         }
  
-        return "redirect:/useraddress/"+u.getEmail();
+        return "productpage";
     }
     
     

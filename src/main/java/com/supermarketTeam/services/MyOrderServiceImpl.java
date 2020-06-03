@@ -27,10 +27,12 @@ public class MyOrderServiceImpl implements IMyOrderService{
     }
 
     @Override
-    public MyOrder save(MyOrderRegistrationDto myOrderDto) {
-         MyOrder myOrder = new MyOrder();
-        myOrder.setTotalAmount(myOrderDto.getTotalAmount());
-        return myOrderRepo.save(myOrder);
+    public MyOrder save(MyOrder myOrder) {
+        MyOrder myGreatOrder = new MyOrder();
+        myGreatOrder.setTotalAmount(myOrder.getTotalAmount());
+        System.out.println("*********************" + myOrder.getTotalAmount());
+        myGreatOrder.setDate(java.time.LocalDate.now());
+        return myOrderRepo.save(myGreatOrder);
     }
 
     @Override
