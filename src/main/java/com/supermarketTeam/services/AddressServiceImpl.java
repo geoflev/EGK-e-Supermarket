@@ -42,24 +42,28 @@ public class AddressServiceImpl implements IAddressService {
     public void delete(Address address) {
         repo.delete(address);
     }
+    
+      @Override
+    public Address update(Address address) {
+        Address dbAddress = repo.findById(address.getId()).get();
+        if (dbAddress != null) {
+            dbAddress.setAddressName(address.getAddressName());
+            dbAddress.setCity(address.getCity());
+            dbAddress.setCountry(address.getCountry());
+            dbAddress.setPostcode(address.getPostcode());
+            dbAddress.setTelephone(address.getTelephone());
+            dbAddress.setText(address.getText());
+            dbAddress.setUserId(address.getUserId());
+            return repo.save(dbAddress);
+        }
+        return null;
+    }
 
     @Override
     public Address createOrUpdate(Address address) {
         if (address.getId()!= null) {
-            Address dbAddress = repo.findById(address.getId()).get();
-            if (dbAddress != null) {
-                dbAddress.setAddressName(address.getAddressName());
-                dbAddress.setCity(address.getCity());
-                dbAddress.setCountry(address.getCountry());
-                dbAddress.setPostcode(address.getPostcode());
-                dbAddress.setTelephone(address.getTelephone());
-                dbAddress.setText(address.getText());
-                dbAddress.setUserId(address.getUserId());
-                return repo.save(address);
-            } else {
-                return null;
-            }
-        } else {
+          return  update(address);
+        } else {           
             Address addr = new Address();
             addr.setAddressName(address.getAddressName());
             addr.setCity(address.getCity());
@@ -71,22 +75,6 @@ public class AddressServiceImpl implements IAddressService {
             return repo.save(addr);
         }
 
-    }
-
-    @Override
-    public Address update(Address address) {
-        Address dbAddress = repo.findById(address.getId()).get();
-        if (dbAddress != null) {
-            dbAddress.setAddressName(address.getAddressName());
-            dbAddress.setCity(address.getCity());
-            dbAddress.setCountry(address.getCountry());
-            dbAddress.setPostcode(address.getPostcode());
-            dbAddress.setTelephone(address.getTelephone());
-            dbAddress.setText(address.getText());
-            dbAddress.setUserId(address.getUserId());
-            return repo.save(address);
-        }
-        return null;
     }
 
 }

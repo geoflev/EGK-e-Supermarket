@@ -25,18 +25,15 @@ public class UserAddressController {
     @RequestMapping(value = "/useraddress/{email}", method = RequestMethod.GET)
     public String editUserAddress(ModelMap view, @PathVariable String email) {
         User user = userService.findByEmail(email);
-        if(!user.getAddressList().isEmpty()){
-        Address address =  user.getAddressList().get(0);
+        Address address = null;
+        if (!user.getAddressList().isEmpty()) {
+            address = user.getAddressList().get(0);
+        }else {
+            address = new Address();
+        }
         view.addAttribute("address", address);
         view.addAttribute("user", user);
         return ("useraddress");
-        }else{
-          Address address = new Address();
-             view.addAttribute("address", address);
-             view.addAttribute("user", user);
-        return ("useraddress");
-        }
-        
     }
 
     @RequestMapping(value = "/useraddress/{email}", method = RequestMethod.POST)
