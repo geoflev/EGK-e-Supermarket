@@ -59,7 +59,6 @@ public class Product implements Serializable {
     @NotNull
     @Column(name = "bio", nullable = false)
     private boolean bio;
-    @JsonBackReference
     @JoinColumn(name = "category_id", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)
     private Category categoryId;

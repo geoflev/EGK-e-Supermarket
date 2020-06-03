@@ -26,7 +26,7 @@ public class HomeController {
         request.getSession().setAttribute("userId", u.getId());
         Role role = u.getRoles().iterator().next();
         if(role.getName().equals("ROLE_ADMIN")){
-            return "welcome"; 
+            return "productpage"; 
         }
  
         return "redirect:/useraddress/"+u.getEmail();
