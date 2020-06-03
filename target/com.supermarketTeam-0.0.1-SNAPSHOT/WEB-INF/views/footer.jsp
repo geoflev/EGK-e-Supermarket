@@ -13,6 +13,7 @@
                 font-weight: 500;
                 line-height:24px;
                 color:#737373;
+                margin-top: 40px;
             }
             .site-footer hr
             {
@@ -177,7 +178,7 @@
                 color:#fff;
                 font-size:16px;
             }
-          
+            
         </style>
     </head>
     <body>
@@ -188,7 +189,7 @@
                     <div class="col-sm-12 col-md-6">
                         <h6>About</h6>
                         <p class="text-justify">Our Commitment to Ethics
-                            At Ahold Delhaize, our shared values support an ethical culture and
+                            At EGK, our shared values support an ethical culture and
                             are the foundation of our commitment to conduct our business by doing
                             what’s right, every day. Our Code of Ethics supports this commitment
                             by outlining four ethical principles that can be applied in our everyday work.
@@ -198,23 +199,23 @@
                     <div class="col-xs-6 col-md-2">
                         <h6>Categories</h6>
                         <ul class="footer-links">
-                            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
-                            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
-                            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
-                            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
-                            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
-                            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                            <li>Vegetables</li>
+                            <li>Fruits</li>
+                            <li>Meat & Fish</li>
+                            <li>Soft Drinks</li>
+                            <li>Alcohol</li>
+                            <li>Cleaning</li>
                         </ul>
                     </div>
 
                     <div class="col-xs-6 col-md-2">
                         <h6>Quick Links</h6>
                         <ul class="footer-links">
-                            <li><a href="http://scanfcode.com/about/">About Us</a></li>
-                            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-                            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
-                            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-                            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                            <li>About Us</li>
+                            <li>Contact Us</li>
+                            <li>Contribute</li>
+                            <li>Privacy Policy</li>
+                            <li>Sitemap</li>
                         </ul>
                     </div>
                     <div class="col-xs-6 col-md-2">

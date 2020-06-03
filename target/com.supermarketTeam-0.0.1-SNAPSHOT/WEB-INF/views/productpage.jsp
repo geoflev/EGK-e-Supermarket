@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,16 +20,36 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <link rel="stylesheet" href="<c:url value='/static/css/productcss.css'/>">
+        <style>
+            .navig ,h2{
+                color: white;
+                font-size: 14px;
+                font-weight: 300;
+                box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+            }
+            #carttab{
+                background-color: #edac7f;
+            }
+            span{
+                color: black;
+                font-weight: 500;
+            }
+        </style>
     </head>
 
     <body>
         <div class="navig">
-            <div class="achive" id="goleft"><a href="#"></a>E-SHOP</div>
+            <div class="achive" id="goleft"><a href="#"></a>E-Shop</div>
             <div class="achive"><a href="contactus.html"></a>Contact Us</div>
-            <div class="achive"><a href="login.html"></a>Register / Login</div>
-            <div class="achive">Basket</div>
+            <div class="achive">
+                <c:if test="${pageContext.request.userPrincipal.name != null}">
+                    <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                        <h2><span>${pageContext.request.userPrincipal.name},</span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+                </c:if>
+            </div>
         </div>
-        <!--HERE GOES THE NAVBAR-->
         <div id="toggleMenu">
             <nav id="toggleNav" class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,28 +83,20 @@
         </div>
         <div class="middle">
             <div class="categories">
-                <div><a href="#" onclick="loadProducts()">ALL PRODUCTS</a></div>
-                <div>
-                    <a href="#" onclick="filterBy('Vegetables')">VEGETABLES</a></div>
-
-                <div><a href="#.html" onclick="filterBy('Fruit')">FRUITS</a></div>
-                <div><a href="#.html" onclick="filterBy('Meat')">MEAT & FISH</a></div>
-
-                <div><a href="#.html" onclick="filterBy('Soft Drinks')">SOFT DRINKS</a></div>
-                <div><a href="#.html" onclick="filterBy('Alcohol Drinks')">ALCOHOL</a></div>
-                <div><a href="#.html" onclick="filterBy('Cleaning')">CLEANING</a></div>       
+                <div><a href="#" onclick="loadProducts()">All Products</a></div>
+                <div><a href="#" onclick="filterBy('Vegetables')">Vegetables</a></div>
+                <div><a href="#" onclick="filterBy('Fruit')">Fruits</a></div>
+                <div><a href="#" onclick="filterBy('Meat')">Meat & Fish</a></div>
+                <div><a href="#" onclick="filterBy('Soft Drinks')">Soft Drinks</a></div>
+                <div><a href="#" onclick="filterBy('Alcohol Drinks')">Alcohol</a></div>
+                <div><a href="#" onclick="filterBy('Cleaning')">Cleaning</a></div>       
             </div>
 
             <!-- Nav -->
             <nav id="cartSize" class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
                 <div class="row">
                     <div class="col">
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            data-toggle="modal"
-                            data-target="#cart"
-                            >
+                        <button type="button" id="carttab" class="btn " data-toggle="modal" data-target="#cart">
                             Cart ( <span class="total-count" id="total-count">0</span> items |
                             <span id="total-amount" class="total-amount">0</span> &euro; )</button
                         ><button class="clear-cart btn btn-danger">Clear Cart</button>
@@ -154,5 +167,6 @@
 
         <script src="<c:url value='/static/js/code.js'/>" type="text/javascript"></script>
         <script src="<c:url value='/static/js/dataFunctions.js'/>" type="text/javascript"></script>
+        <jsp:include page="footer.jsp" />
     </body>
 </html>
