@@ -15,22 +15,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @Autowired
-    private UserServiceImpl userService;
+    
 
     @RequestMapping("/")
-    public String viewHomePage(Model model, HttpServletRequest request) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetail = (UserDetails) auth.getPrincipal();
-        User u = userService.findByUsername(userDetail.getUsername());
-        request.getSession().setAttribute("userId", u.getId());
-        request.getSession().setAttribute("userMail", u.getEmail());
-        Role role = u.getRoles().iterator().next();
-        if (role.getName().equals("ROLE_ADMIN")) {
-            return "productpage";
-        }
-
+    public String viewHomePage(Model model) {
         return "welcome";
+    }
+    
+    @RequestMapping("/eshop")
+    public String viewEShopPage(Model model, HttpServletRequest request) {
+        return "productpage";
+    
     }
 
 }

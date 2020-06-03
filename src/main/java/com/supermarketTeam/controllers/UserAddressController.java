@@ -1,11 +1,16 @@
 package com.supermarketTeam.controllers;
 
 import com.supermarketTeam.entities.Address;
+import com.supermarketTeam.entities.Role;
 import com.supermarketTeam.entities.User;
 import com.supermarketTeam.services.AddressServiceImpl;
 import com.supermarketTeam.services.UserService;
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -21,6 +26,7 @@ public class UserAddressController {
     private UserService userService;
     @Autowired
     private AddressServiceImpl service;
+    
 
     @RequestMapping(value = "/useraddress/{email}", method = RequestMethod.GET)
     public String editUserAddress(ModelMap view, @PathVariable String email) {
@@ -44,6 +50,15 @@ public class UserAddressController {
         }
         service.createOrUpdate(address);
         return "payout";
+    }
+
+    @RequestMapping(value = "/useraddress", method = RequestMethod.GET)
+    public String getUserAddress(HttpServletRequest request) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetail = (UserDetails) auth.getPrincipal();
+        User u = userService.findByUsername(userDetail.getUsername());
+        System.out.println("*****************************"+u.getEmail());
+        return "redirect:/useraddress/"+ u.getEmail();
     }
 
 }

@@ -18,7 +18,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-        <title>Create an account</title>
+        <title>Welcome!</title>
         <style>
             .d-block {
                 width: 100%;
@@ -49,8 +49,8 @@
                 font-size: 20px;  
             }
             body{
-                background-color: #fff;
-            }
+                background-color: #fff ;
+            } 
         </style>
     </head>
     <body>

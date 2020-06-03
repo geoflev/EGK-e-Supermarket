@@ -6,9 +6,16 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>Spring Boot WebSocket Chat Application</title>
+        <title>Customer Service</title>
          <link href="<c:url value='/static/css/chat.css' />" rel="stylesheet"></link>
-        
+         <style>
+             #backto{
+                position : absolute;
+                bottom: 27%;
+                left: 31%;
+                right: 40%;
+             }
+         </style>
   </head>
   <body>
      
@@ -29,6 +36,7 @@
             </form>
         </div>
     </div>
+    
 
     <div id="chat-page" class="hidden">
         <div class="chat-container">
@@ -51,7 +59,9 @@
             </form>
         </div>
     </div>
-
+    <br>
+    <br>
+    <div id="backto"><a href="/ProductBoot/" class="btn btn-danger">Back to Home</a></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <script src="<c:url value='/static/js/chat.js' />"></script>

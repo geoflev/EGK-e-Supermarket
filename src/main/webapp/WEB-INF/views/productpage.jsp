@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,8 +40,10 @@
 
     <body>
         <div class="navig">
-            <div class="achive" id="goleft"><a href="#"></a>E-Shop</div>
-            <div class="achive"><a href="contactus.html"></a>Contact Us</div>
+            <div class="achive" id="goleft"><a href="${contextPath}/welcome/">Home</a></div>
+            <div class="achive" id="goleft"><a href="#">E-Shop</a></div>
+            <div class="achive"><a href="contactus.html">Contact us</a></div>
+            <div class="achive" id="goleft"><a href="${contextPath}/chat">Need Help?</a></div>
             <div class="achive">
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
                     <form id="logoutForm" method="POST" action="${contextPath}/logout">
@@ -49,6 +51,10 @@
                     </form>
                     <h2><span>${pageContext.request.userPrincipal.name},</span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                 </c:if>
+               <c:if test="${pageContext.request.userPrincipal.name == null}">
+                        <h2><a href="${contextPath}/login/">Login</a></h2>
+                    </c:if>
+                
             </div>
         </div>
         <div id="toggleMenu">
@@ -58,10 +64,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                        <a class="nav-item nav-link" href="#">Features</a>
-                        <a class="nav-item nav-link" href="#">Pricing</a>
-                        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-item nav-link active" href="${contextPath}/welcome/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="#">E-Shop</a>
+                        <a class="nav-item nav-link" href="#">Contact us</a>
+                        <a class="nav-item nav-link" href="${contextPath}/chat">Need Help?</a>
                     </div>
                 </div>
             </nav>
@@ -124,20 +130,19 @@
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                 Close
                             </button>
-                            <form:form   method="GET" action="useraddress/${userMail}" modelAttribute="myorder">
+                            <form:form   method="GET" action="useraddress" modelAttribute="myorder">
                                 <button id="ordernow" type="submit" class="btn btn-primary">Order now</button>
                             </form:form>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div id="listOfProducts" class="listOfProducts"></div>
         </div>
         <script>
             function transferamount() {
                 var amount = document.getElementById("total-amount").innerHTML;
-                sessionStorage.setItem("paypalamount",amount);
+                sessionStorage.setItem("paypalamount", amount);
             }
             document.getElementById("ordernow").addEventListener("click", transferamount);
         </script>                       

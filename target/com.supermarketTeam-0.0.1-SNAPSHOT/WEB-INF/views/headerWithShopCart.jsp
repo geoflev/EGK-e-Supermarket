@@ -29,8 +29,10 @@
             <c:when test="${pageContext.request.isUserInRole('ROLE_USER')}">
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="${contextPath}/welcome/">Home</a></li>
-                        <li><a href="${contextPath}/product/" >Products</a></li>
+                        <li><a href="${contextPath}/">Home</a></li>
+                        <li><a href="${contextPath}/eshop">E-Shop</a></li>
+                        <li><a href="#" >Contact us</a></li>
+                        <li><a href="${contextPath}/chat" >Need Help?</a></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name != null}">
                                 <form id="logoutForm" method="POST" action="${contextPath}/logout">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -38,13 +40,17 @@
 
                                 <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                             </c:if></li>
+                        <li><c:if test="${pageContext.request.userPrincipal.name == null}">
+                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                            </c:if>
+                        </li>
                     </ul>
                 </nav>
             </c:when>
             <c:when test="${pageContext.request.isUserInRole('ROLE_ADMIN')}">
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="${contextPath}/welcome/">Home</a></li>
+                        <li><a href="${contextPath}/">Home</a></li>
                         <li><a href="${contextPath}/product/" >Products</a></li>
                         <li><a href="${contextPath}/address/">Address</a></li>
                         <li><a href="${contextPath}/category/">Category</a></li>
@@ -58,32 +64,35 @@
 
                                 <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                             </c:if></li>
+                        <li><c:if test="${pageContext.request.userPrincipal.name == null}">
+                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                            </c:if>
+                        </li>
                     </ul>
                 </nav>
             </c:when>
             <c:otherwise>
-                
-            </c:otherwise>
-        </c:choose>
-
-        <!--        <nav id="main-nav">
+                <nav id="main-nav">
                     <ul>
-                        <li><a href="${contextPath}/welcome/">Home</a></li>
-                        <li><a href="${contextPath}/product/" >Products</a></li>
-                        <li><a href="${contextPath}/address/">Address</a></li>
-                        <li><a href="${contextPath}/category/">Category</a></li>
-                        <li><a href="${contextPath}/mtype/">Measure Type</a></li>
-                        <li><a href="${contextPath}/user/">Users</a></li>
-                        <li><a href="${contextPath}/chat/">Chat</a></li>
+                        <li><a href="${contextPath}/">Home</a></li>
+                        <li><a href="${contextPath}/eshop">E-Shop</a></li>
+                        <li><a href="#" >Contact us</a></li>
+                        <li><a href="${contextPath}/chat" >Need Help?</a></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name != null}">
                                 <form id="logoutForm" method="POST" action="${contextPath}/logout">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 </form>
-        
+
                                 <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-        </c:if></li>
-</ul>
-</nav>-->
+                            </c:if></li>
+                        <li><c:if test="${pageContext.request.userPrincipal.name == null}">
+                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                            </c:if>
+                        </li>
+                    </ul>
+                </nav>
+            </c:otherwise>
+        </c:choose>
 
         <div id="cd-shadow-layer"></div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
