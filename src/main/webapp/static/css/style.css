@@ -116,7 +116,7 @@ header {
   left: 0;
 }
 #cd-hamburger-menu a {
-  background: #26292f url("../img/cd-hamburger-menu.svg") no-repeat center center;
+  background: #26292f url("../css/header/img/cd-hamburger-menu.svg") no-repeat center center;
 }
 @media only screen and (min-width: 1200px) {
   #cd-hamburger-menu {

@@ -1,7 +1,6 @@
 package com.supermarketTeam.controllers;
 
 import com.supermarketTeam.entities.Address;
-import com.supermarketTeam.entities.Role;
 import com.supermarketTeam.entities.User;
 import com.supermarketTeam.services.AddressServiceImpl;
 import com.supermarketTeam.services.UserService;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-
 public class UserAddressController {
 
     @Autowired
@@ -57,7 +55,6 @@ public class UserAddressController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetail = (UserDetails) auth.getPrincipal();
         User u = userService.findByUsername(userDetail.getUsername());
-        System.out.println("*****************************"+u.getEmail());
         return "redirect:/useraddress/"+ u.getEmail();
     }
 

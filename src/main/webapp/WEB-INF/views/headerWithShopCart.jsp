@@ -17,11 +17,13 @@
     </head>
     <body class="foo">
         <header>
-            <div id="logo"><img src="<c:url value='/static/css/header/img/cd-logo.svg'/>" alt="Adminpage"></div>
+            <div id="cd-hamburger-menu"><a class="cd-img-replace" href="#0">Menu</a></div>
+            <div id="logo"><img src="<c:url value='/static/css/header/img/android-icon-48x48.png'/>" alt="Adminpage"></div>
             <style>
                 li{
                     cursor: pointer;
                 }
+
             </style>
         </header>
 
@@ -57,6 +59,7 @@
                         <li><a href="${contextPath}/mtype/">Measure Type</a></li>
                         <li><a href="${contextPath}/user/">Users</a></li>
                         <li><a href="${contextPath}/chat/">Chat</a></li>
+                        <li><a href="${contextPath}/chart/">Statistics</a></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name != null}">
                                 <form id="logoutForm" method="POST" action="${contextPath}/logout">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

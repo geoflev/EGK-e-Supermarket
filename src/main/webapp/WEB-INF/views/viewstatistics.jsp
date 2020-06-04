@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>CHART</title>
@@ -20,15 +21,17 @@
             #myChart {
                 height: 800px !important;
             }
+            
         </style>
     </head>
     <body>
-        <canvas id="myChart" width="200px" height="200px"></canvas>
-        <br>
-        <br>
-        <br>
-        <br>
-        <canvas id="doughnut-chart" width="1000" ></canvas>
+        <div width="200px" height="200px">
+            <canvas id="myChart" ></canvas>
+        </div>
+        <div width="200px" height="200px">
+            <canvas id="doughnut-chart"></canvas>
+        </div>
+        
         <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

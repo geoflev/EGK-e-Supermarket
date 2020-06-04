@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
       <meta charset="utf-8">
       <title>Error 500</title>
       

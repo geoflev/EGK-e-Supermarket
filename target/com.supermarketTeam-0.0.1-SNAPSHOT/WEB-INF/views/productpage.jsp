@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Default Page</title>
@@ -22,11 +23,10 @@
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <link rel="stylesheet" href="<c:url value='/static/css/productcss.css'/>">
         <style>
-            .navig ,h2{
+            .navig a,h2{
                 color: white;
                 font-size: 14px;
                 font-weight: 300;
-                box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
             }
             #carttab{
                 background-color: #edac7f;
@@ -35,11 +35,21 @@
                 color: black;
                 font-weight: 500;
             }
+            #logo{
+                padding: 0;
+            }
+            #logo:hover{
+                background-color: #7cc2af;
+                cursor: auto;
+            }
         </style>
+
     </head>
 
     <body>
         <div class="navig">
+
+            <div  id="logo"><img src="<c:url value='/static/css/header/img/android-icon-48x48.png'/>" alt="Adminpage"></div>  
             <div class="achive" id="goleft"><a href="${contextPath}/welcome/">Home</a></div>
             <div class="achive" id="goleft"><a href="#">E-Shop</a></div>
             <div class="achive"><a href="contactus.html">Contact us</a></div>
@@ -51,11 +61,10 @@
                     </form>
                     <h2><span>${pageContext.request.userPrincipal.name},</span> <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                 </c:if>
-               <c:if test="${pageContext.request.userPrincipal.name == null}">
-                        <h2><a href="${contextPath}/login/">Login</a></h2>
-                    </c:if>
-                
-            </div>
+                <c:if test="${pageContext.request.userPrincipal.name == null}">
+                    <h2><a href="${contextPath}/login/">Login</a></h2>
+                </c:if>
+            </div> 
         </div>
         <div id="toggleMenu">
             <nav id="toggleNav" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -104,9 +113,9 @@
                 <div class="row">
                     <div class="col">
                         <button type="button" id="carttab" class="btn " data-toggle="modal" data-target="#cart">
-                            Cart ( <span class="total-count" id="total-count">0</span> items |
+                            ( <span class="total-count" id="total-count">0</span> items |
                             <span id="total-amount" class="total-amount">0</span> &euro; )</button
-                        ><button class="clear-cart btn btn-danger">Clear Cart</button>
+                        ><button class="clear-cart btn btn-danger">Clear</button>
                     </div>
                 </div>
             </nav>

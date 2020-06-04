@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
       <meta charset="utf-8">
       <title>Create an account</title>
       <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
