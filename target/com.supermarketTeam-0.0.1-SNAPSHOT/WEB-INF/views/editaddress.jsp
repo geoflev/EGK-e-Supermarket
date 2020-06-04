@@ -26,6 +26,14 @@
                 margin-left: 280px;
                 font-size: 14px !important; 
             }
+            #errorpc{
+                color: red;
+                font-size: 12px;
+            }
+            #errortel{
+               color: red;
+                font-size: 12px; 
+            }
         </style>
     </head>
     <body>
@@ -34,7 +42,7 @@
         <div class="generic-container">
             <h2>Update Address</h2>
             <br>
-            <form:form   method="POST" action="${id}" modelAttribute="address" class="form-horizontal">
+            <form:form id="form"  method="POST" action="${id}" modelAttribute="address" class="form-horizontal">
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="addressName">Address</label>
@@ -63,7 +71,8 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="postcode">Post Code</label>
                         <div class="col-md-7">
-                            <form:input type="text" path="postcode" class="form-control input-sm" maxlength="12" required="required"/>
+                            <form:input id="postcode" type="text" path="postcode" class="form-control input-sm" maxlength="12" required="required"/>
+                            <div id="errorpc"></div>
                         </div>
                     </div>
                 </div>
@@ -71,7 +80,8 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="telephone">Telephone</label>
                         <div class="col-md-7">
-                            <form:input type="text" path="telephone" class="form-control input-sm" maxlength="12" required="required"/>
+                            <form:input id="telephone" type="text" path="telephone" class="form-control input-sm" maxlength="12" required="required"/>
+                            <div id="errortel"></div>
                         </div>
                     </div>
                 </div>    
@@ -97,5 +107,28 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            const postal = document.getElementById("postcode");
+            const tel = document.getElementById("telephone");
+            const form = document.getElementById("form");
+            const errorElementpc = document.getElementById("errorpc");
+            const errorElementtel = document.getElementById("errortel");
+
+            form.addEventListener("submit", (e) => {
+                let messagespc = [];
+                let messagestel = [];
+                var numbers = /^[0-9]+$/;
+                if (!postal.value.match(numbers)) {
+                    e.preventDefault();
+                    messagespc.push("Invalid input for Postal Code")
+                    errorElementpc.innerText = messagespc;
+                }
+                if (!tel.value.match(numbers)) {
+                    e.preventDefault();
+                    messagestel.push("Invalid input for Telephone")
+                    errorElementtel.innerText = messagestel;
+                }
+            });
+        </script>
     </body>
 </html>

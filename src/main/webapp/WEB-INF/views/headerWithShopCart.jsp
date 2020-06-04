@@ -5,6 +5,7 @@
 <!doctype html>
 <html lang="en">
     <head>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -18,7 +19,7 @@
     <body class="foo">
         <header>
             <div id="cd-hamburger-menu"><a class="cd-img-replace" href="#0">Menu</a></div>
-            <div id="logo"><img src="<c:url value='/static/css/header/img/android-icon-48x48.png'/>" alt="Adminpage"></div>
+            <div id="logo"><a href="${contextPath}/"><img src="<c:url value='/static/css/header/img/android-icon-48x48.png'/>" alt="Adminpage"></a></div>
             <style>
                 li{
                     cursor: pointer;
@@ -31,19 +32,19 @@
             <c:when test="${pageContext.request.isUserInRole('ROLE_USER')}">
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="${contextPath}/">Home</a></li>
-                        <li><a href="${contextPath}/eshop">E-Shop</a></li>
-                        <li><a href="#" >Contact us</a></li>
-                        <li><a href="${contextPath}/chat" >Need Help?</a></li>
-                        <li><c:if test="${pageContext.request.userPrincipal.name != null}">
-                                <form id="logoutForm" method="POST" action="${contextPath}/logout">
+                        <li></li>
+                        <li><a href="${contextPath}/eshop"><i class="fas fa-shopping-basket" style="font-size: 20px; color: white;">&nbsp;</i>E-Shop</a></li>
+                        <li><a href="${contextPath}/contact" ><i class="fas fa-address-book" style="font-size: 20px;">&nbsp;</i>Contact us</a></li>
+                        <li><a href="${contextPath}/chat" ><i class="fas fa-comments" style="font-size: 20px;">&nbsp;</i>Need Help?</a></li>
+                        <li ><c:if test="${pageContext.request.userPrincipal.name != null}">
+                                <form id="logoutForm" method="POST" action="${contextPath}/logout" >
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 </form>
 
-                                <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+                                <h2> <i class="fas fa-user" style="font-size: 20px;  color: white;">&nbsp; </i>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                             </c:if></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name == null}">
-                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                                <h2><a href="${contextPath}/login/"><i class="fas fa-user" style="font-size: 20px;  color: white;">&nbsp; </i>Login</a></h2>
                             </c:if>
                         </li>
                     </ul>
@@ -68,7 +69,7 @@
                                 <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                             </c:if></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name == null}">
-                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                                <h2><a href="${contextPath}/login/"><i class="fas fa-user" style="font-size: 20px;  color: white;">&nbsp; </i>Login</a></h2>
                             </c:if>
                         </li>
                     </ul>
@@ -77,10 +78,9 @@
             <c:otherwise>
                 <nav id="main-nav">
                     <ul>
-                        <li><a href="${contextPath}/">Home</a></li>
-                        <li><a href="${contextPath}/eshop">E-Shop</a></li>
-                        <li><a href="#" >Contact us</a></li>
-                        <li><a href="${contextPath}/chat" >Need Help?</a></li>
+                        <li><a href="${contextPath}/eshop"><i class="fas fa-shopping-basket" style="font-size: 20px; color: white;">&nbsp;</i>E-Shop</a></li>
+                        <li><a href="${contextPath}/contact" ><i class="fas fa-address-book" style="font-size: 20px;">&nbsp;</i>Contact us</a></li>
+                        <li><a href="${contextPath}/chat" ><i class="fas fa-comments" style="font-size: 20px;">&nbsp;</i>Need Help?</a></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name != null}">
                                 <form id="logoutForm" method="POST" action="${contextPath}/logout">
                                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -89,7 +89,7 @@
                                 <h2>${pageContext.request.userPrincipal.name}, <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
                             </c:if></li>
                         <li><c:if test="${pageContext.request.userPrincipal.name == null}">
-                                <h2><a href="${contextPath}/login/">Login</a></h2>
+                                <h2><a href="${contextPath}/login/"><i class="fas fa-user" style="font-size: 20px; color: white;">&nbsp;</i>Login</a></h2>
                             </c:if>
                         </li>
                     </ul>

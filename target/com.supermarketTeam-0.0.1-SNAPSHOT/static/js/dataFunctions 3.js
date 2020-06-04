@@ -60,7 +60,7 @@ function createEachDOMProduct(product) {
       <p class="price"><strong>${product.price}</strong></p>
       <span>€</span>
     </div>
-    <button class="btn addToCartButton">
+    <button class="btn btn-primary addToCartButton">
       ADD TO CART<a data-json=${product} class="add-to-cart-anchor"></a>
     </button>`;
 

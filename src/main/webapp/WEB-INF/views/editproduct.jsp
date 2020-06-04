@@ -25,6 +25,14 @@
                 margin-left: 280px;
                 font-size: 14px !important; 
             }
+            #errorquan{
+                color: red;
+                font-size: 12px;
+            }
+            #errorprice{
+               color: red;
+                font-size: 12px; 
+            }
         </style>
     </head>
     <body>
@@ -33,7 +41,7 @@
         <div class="generic-container">
             <h2>Update Product</h2>
             <br>
-            <form:form   method="POST" action="${id}" modelAttribute="product" class="form-horizontal">
+            <form:form  id="form" method="POST" action="${id}" modelAttribute="product" class="form-horizontal">
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="name">Name</label>
@@ -55,6 +63,7 @@
                         <label class="col-md-3 control-lable" for="quantity">Quantity</label>
                         <div class="col-md-7">
                             <form:input type="text" path="quantity" class="form-control input-sm" maxlength="15" required="required"/>
+                            <div id="errorquan"></div>
                         </div>
                     </div>
                 </div>
@@ -63,6 +72,7 @@
                         <label class="col-md-3 control-lable" for="price">Price</label>
                         <div class="col-md-7">
                             <form:input type="text" path="price" class="form-control input-sm" maxlength="10" required="required"/>
+                            <div id="errorprice"></div>
                         </div>
                     </div>
                 </div>
@@ -112,5 +122,39 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            const quantity = document.getElementById("quantity");
+            const price = document.getElementById("price");
+            const form = document.getElementById("form");
+            const errorElementQuan = document.getElementById("errorquan");
+            const errorElementPrice = document.getElementById("errorprice");
+
+            form.addEventListener("submit", (e) => {
+                let messagesQuan = [];
+                let messagesPrice = [];
+                var numbers = /^[0-9]+$/;
+                if (!quantity.value.match(numbers)) {
+                    e.preventDefault();
+                    messagesQuan.push("Invalid input for Quantity")
+                    errorElementQuan.innerText = messagesQuan;
+                }
+                if (quantity.value < 1) {
+                    e.preventDefault();
+                    messagesQuan.push("Quantity cannot be 0!")
+                    errorElementQuan.innerText = messagesQuan;
+                }
+                if (!price.value.match(numbers)) {
+                    e.preventDefault();
+                    messagesPrice.push("Invalid input for Price")
+                    errorElementPrice.innerText = messagesPrice;
+                }
+                if (price.value === 0) {
+                    e.preventDefault();
+                    messagesPrice.push("Price cannot be 0!")
+                    errorElementPrice.innerText = messagesPrice;
+                }
+                
+            });
+        </script>
     </body>
 </html>

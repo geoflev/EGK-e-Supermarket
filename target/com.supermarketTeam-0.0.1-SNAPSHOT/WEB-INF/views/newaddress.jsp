@@ -27,6 +27,14 @@
                 margin-left: 280px;
                 font-size: 14px !important; 
             }
+             #errorpc{
+                color: red;
+                font-size: 12px;
+            }
+            #errortel{
+               color: red;
+                font-size: 12px; 
+            }
         </style>
     </head>
     <body>
@@ -98,5 +106,28 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            const postal = document.getElementById("postcode");
+            const tel = document.getElementById("telephone");
+            const form = document.getElementById("form");
+            const errorElementpc = document.getElementById("errorpc");
+            const errorElementtel = document.getElementById("errortel");
+
+            form.addEventListener("submit", (e) => {
+                let messagespc = [];
+                let messagestel = [];
+                var numbers = /^[0-9]+$/;
+                if (!postal.value.match(numbers)) {
+                    e.preventDefault();
+                    messagespc.push("Invalid input for Postal Code")
+                    errorElementpc.innerText = messagespc;
+                }
+                if (!tel.value.match(numbers)) {
+                    e.preventDefault();
+                    messagestel.push("Invalid input for Telephone")
+                    errorElementtel.innerText = messagestel;
+                }
+            });
+        </script>
     </body>
 </html>

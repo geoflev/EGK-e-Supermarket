@@ -25,6 +25,14 @@
                 margin-left: 280px;
                 font-size: 14px !important; 
             }
+            #errorfn{
+                color: red;
+                font-size: 12px;
+            }
+            #errorln{
+               color: red;
+                font-size: 12px; 
+            }
         </style>
     </head>
     <body>
@@ -54,7 +62,7 @@
                         <label class="col-md-3 control-lable" for="firstName">First Name</label>
                         <div class="col-md-7">
                             <form:input type="text" id="firstName" path="firstName" class="form-control input-sm" maxlength="45" required="required"/>
-                            <div id="error"></div>
+                            <div id="errorfn"></div>
                         </div>
                     </div>
                 </div>
@@ -63,6 +71,7 @@
                         <label class="col-md-3 control-lable" for="lastName">Last Name</label>
                         <div class="col-md-7">
                             <form:input type="text" id="lastName" path="lastName" class="form-control input-sm" maxlength="45" required="required"/>
+                            <div id="errorln"></div>
                         </div>
                     </div>
                 </div>
@@ -83,21 +92,24 @@
             const firstname = document.getElementById("firstName")
             const lastname = document.getElementById("lastName")
             const form = document.getElementById("form")
-            const errorElement = document.getElementById("error")
+            const errorElementfn = document.getElementById("errorfn")
+            const errorElementln = document.getElementById("errorln")
 
             form.addEventListener("submit", (e) => {
-                let messages = [];
+                let messagesfn = [];
+                let messagesln = [];
                 var letters = /^[A-Za-z]+$/;
                 if (!firstname.value.match(letters)) {
                     e.preventDefault();
-                    messages.push("First Name can't contain numbers")
-                    errorElement.innerText = messages;
+                    messagesfn.push("First Name cannot contain numbers")
+                    errorElementfn.innerText = messagesfn;
                 }
                 if (!lastname.value.match(letters)) {
                     e.preventDefault();
-                    messages.push("Last Name can't contain numbers")
-                    errorElement.innerText = messages;
+                    messagesln.push("Last Name cannot contain numbers")
+                    errorElementln.innerText = messagesln;
                 }
+                
             })
         </script>
     </body>

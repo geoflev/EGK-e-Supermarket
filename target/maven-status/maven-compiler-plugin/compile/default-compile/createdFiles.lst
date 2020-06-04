@@ -37,6 +37,7 @@ com/supermarketTeam/services/PaypalService.class
 com/supermarketTeam/dao/MyOrderRepository.class
 com/supermarketTeam/dao/MeasurementTypeRepository.class
 com/supermarketTeam/controllers/CategoryRestController.class
+com/supermarketTeam/config/CustomSuccessHandler.class
 com/supermarketTeam/services/AddressServiceImpl.class
 com/supermarketTeam/controllers/ChatController.class
 com/supermarketTeam/controllers/WebSocketEventListener.class

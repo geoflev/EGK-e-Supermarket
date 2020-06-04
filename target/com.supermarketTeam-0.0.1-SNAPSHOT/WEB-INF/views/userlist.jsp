@@ -3,21 +3,21 @@
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <head>
-        <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  s
+        <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />">
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
-        <title>Product List</title>
+        <title>User List</title>
     </head>
     <body>
        <jsp:include page="headerWithShopCart.jsp" />
         <br>
         <br>
         <div class="panel panel-default">
-            <div class="panel-heading"><span class="lead">User's List</span></div>
+            <div class="panel-heading"><span class="lead">User List</span></div>
             <table class="table table-hover">
                 <thead id="thead">
                     <tr>                       

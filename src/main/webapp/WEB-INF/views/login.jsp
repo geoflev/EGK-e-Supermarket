@@ -19,8 +19,11 @@
                font-weight: 700;
            }
            #errormessage{
-               color: red;
+               color: green;
                font-size: 14px;
+           }
+           #register a{
+               color:#286090;
            }
        </style>
   </head>
@@ -35,7 +38,7 @@
      <br>
     <div class="container">
       <form method="POST" action="login" class="form-signin">
-        <h2  id="login" class="form-heading">Log in</h2>
+        <h2  id="login" class="form-heading"><i class="fas fa-user" style="font-size: 20px;">&nbsp; </i>Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <input name="username" type="text" class="form-control" placeholder="Username"

@@ -26,5 +26,13 @@ public class HomeController {
         return "viewstatistics";
     
     }
+    
+     @RequestMapping("/contact")
+    public String viewContactUs() {
+        return "contact";
+    
+    }
+    
+    
 
 }
