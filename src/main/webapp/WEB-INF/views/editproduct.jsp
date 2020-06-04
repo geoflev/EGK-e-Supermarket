@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-       <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <head>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
@@ -19,7 +19,7 @@
                 margin : auto;
                 font-weight:700;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
@@ -30,7 +30,7 @@
                 font-size: 12px;
             }
             #errorprice{
-               color: red;
+                color: red;
                 font-size: 12px; 
             }
         </style>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                  <div class="row">
+                <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="bio">Bio</label>
                         <div class="col-md-7">
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                 </div>    
-                 <div class="row">
+                <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="categoryId.id">Category Type</label>
                         <div class="col-md-7">
@@ -153,7 +153,7 @@
                     messagesPrice.push("Price cannot be 0!")
                     errorElementPrice.innerText = messagesPrice;
                 }
-                
+
             });
         </script>
     </body>

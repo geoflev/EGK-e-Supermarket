@@ -13,7 +13,7 @@
         <title>User List</title>
     </head>
     <body>
-       <jsp:include page="headerWithShopCart.jsp" />
+        <jsp:include page="headerWithShopCart.jsp" />
         <br>
         <br>
         <div class="panel panel-default">

@@ -11,7 +11,6 @@
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="<c:url value='/static/css/reset.css'/>">
         <link rel="stylesheet" href="<c:url value='/static/css/style.css'/>">
-
         <script src="<c:url value='/static/js/modernizr.js'/>"></script> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>Side Cart</title>
@@ -24,7 +23,6 @@
                 li{
                     cursor: pointer;
                 }
-
             </style>
         </header>
 
@@ -96,7 +94,6 @@
                 </nav>
             </c:otherwise>
         </c:choose>
-
         <div id="cd-shadow-layer"></div>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="<c:url value='/static/js/main.js'/>"></script> 

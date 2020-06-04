@@ -1,5 +1,10 @@
 #cartSize {
  padding: 0 !important;
+ max-width: 250px;
+ 
+}
+.fixed-top{
+    left: 5%;
 }
 
 body {
@@ -14,7 +19,7 @@ body {
 }
 
 .categories {
-/*  background-color: #7cc2af;*/
+
   background-color: #7cc2af;
   width: 15%;
   height: 500px;

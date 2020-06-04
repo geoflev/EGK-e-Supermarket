@@ -20,8 +20,8 @@
                 margin : auto;
                 font-weight:700;
             }
-           
-             .generic-container
+
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
@@ -32,7 +32,7 @@
                 font-size: 12px;
             }
             #errorprice{
-               color: red;
+                color: red;
                 font-size: 12px; 
             }
         </style>
@@ -157,7 +157,7 @@
                     messagesPrice.push("Price cannot be 0 or negative!")
                     errorElementPrice.innerText = messagesPrice;
                 }
-                
+
             });
         </script>
     </body>

@@ -19,7 +19,7 @@
                 margin : auto;
                 font-weight:700;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
@@ -30,7 +30,7 @@
                 font-size: 12px;
             }
             #errorln{
-               color: red;
+                color: red;
                 font-size: 12px; 
             }
         </style>
@@ -117,7 +117,7 @@
                     messagesln.push("Last Name cannot contain numbers")
                     errorElementln.innerText = messagesln;
                 }
-                
+
             })
         </script>
     </body>

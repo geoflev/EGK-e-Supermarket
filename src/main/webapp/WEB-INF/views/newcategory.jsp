@@ -13,13 +13,13 @@
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
         <title>Add Category</title>
         <jsp:include page="headerWithShopCart.jsp" />
-         <style>
+        <style>
             h2{
                 font-size: 16px;
                 margin : auto;
                 font-weight:700;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
@@ -39,7 +39,7 @@
                             <form:input type="text" path="categoryName" class="form-control input-sm" maxlength="30" required="required"/>
                         </div>
                     </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
             </div>

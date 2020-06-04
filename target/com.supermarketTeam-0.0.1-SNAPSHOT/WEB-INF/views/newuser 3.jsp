@@ -79,7 +79,7 @@
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="email">Email</label>
                         <div class="col-md-7">
-                            <form:input type="text" path="email" class="form-control input-sm" maxlength="45" required="required"/>
+                            <form:input type="email" path="email" class="form-control input-sm" maxlength="45" required="required"/>
                         </div>
                     </div>
                 </div>

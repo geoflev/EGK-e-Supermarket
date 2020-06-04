@@ -181,7 +181,7 @@
             #subbtn{
                 background-color: white;
             }
-            
+
         </style>
     </head>
     <body>
@@ -230,8 +230,8 @@
                                 <input id="subbtn" class="btn mt-3" type="submit" value="Subscribe">
                                 <p class="message-error hidden"></p>
                             </div>
-                           
-                        <div class="server-answer" id="newsletter-form-submission-response"></div>
+
+                            <div class="server-answer" id="newsletter-form-submission-response"></div>
                     </div>
                 </div>
                 <hr>

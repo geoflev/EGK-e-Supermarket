@@ -1,7 +1,6 @@
 package com.supermarketTeam.services;
 
 import com.supermarketTeam.dao.MyOrderRepository;
-import com.supermarketTeam.dto.MyOrderRegistrationDto;
 import com.supermarketTeam.entities.MyOrder;
 import java.util.List;
 import javax.transaction.Transactional;

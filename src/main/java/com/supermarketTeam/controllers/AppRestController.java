@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.supermarketTeam.dto.MeasurementTypeRegistrationDto;
 import com.supermarketTeam.dto.ProductRegistrationDto;
-import com.supermarketTeam.entities.MeasurementType;
 import com.supermarketTeam.entities.Product;
 import com.supermarketTeam.services.ProductServiceImpl;
 import org.springframework.web.bind.annotation.DeleteMapping;

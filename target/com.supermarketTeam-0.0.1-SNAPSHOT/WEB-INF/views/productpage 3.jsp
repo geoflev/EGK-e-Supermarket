@@ -10,7 +10,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Default Page</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
         <link
             href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value='/static/css/toggleswitch.css'/>">
@@ -30,7 +29,8 @@
                 font-weight: 300;
             }
             #carttab{
-                background-color: #edac7f;
+                background-color: white;
+                border: 0.4px solid black;
             }
             span{
                 color: black;
@@ -38,16 +38,21 @@
             }
             #logo{
                 padding: 0;
+                margin-right: auto;
             }
             #logo:hover{
                 background-color: #7cc2af;
             }
+            .cartClearCart {
+                margin-top: 3%;
+                margin-left: 20%;
+            }
+
         </style>
 
     </head>
     <body>
         <div class="navig">
-            <!--E-Shop  Need Help? Contact us-->
             <div  id="logo"><a href="${contextPath}/welcome/"><img src="<c:url value='/static/css/header/img/android-icon-48x48.png'/>" alt="Adminpage"></a></div>  
             <div class="achive" id="goleft"> <i class="fas fa-shopping-basket" style="font-size: 20px; color: white;">&nbsp;</i><a href="#"> E-Shop</a></div>
             <div class="achive"><a href="${contextPath}/contact"><i class="fas fa-address-book" style="font-size: 20px;"></i> Contact us</a></div>
@@ -108,12 +113,12 @@
 
             <!-- Nav -->
             <nav id="cartSize" class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
-                <div class="row">
+                <div class="row cartClearCart">
                     <div class="col">
                         <button type="button" id="carttab" class="btn " data-toggle="modal" data-target="#cart">
                             ( <span class="total-count" id="total-count">0</span> items |
                             <span id="total-amount" class="total-amount">0</span> &euro; )</button
-                        ><button class="clear-cart btn btn-danger">Clear</button>
+                        ><button class="clear-cart btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 </div>
             </nav>

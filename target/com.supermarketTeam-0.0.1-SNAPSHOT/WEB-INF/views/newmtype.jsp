@@ -19,7 +19,7 @@
                 margin : auto;
                 font-weight:700;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;

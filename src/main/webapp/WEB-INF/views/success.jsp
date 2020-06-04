@@ -3,9 +3,8 @@
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
     <head>
-         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,7 +31,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <jsp:include page="footer.jsp" />
         <script>
-            console.log(sessionStorage.getItem("paypalamount"),typeof sessionStorage.getItem("paypalamount"));
+            console.log(sessionStorage.getItem("paypalamount"), typeof sessionStorage.getItem("paypalamount"));
         </script>
         <script>
             function postPaypalAmount() {
@@ -42,13 +41,13 @@
                 xhr.onload = function () {
                     if (this.status == 200) {
                         var graphData = JSON.parse(xhr.responseText);
-                        console.log(graphData,"SUCCESS");
+                        console.log(graphData, "SUCCESS");
                     }
                 };
                 var item = Number(sessionStorage.getItem("paypalamount"));
                 console.log(item);
                 xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.send(JSON.stringify({"totalAmount":item,"date":"2020-08-01"}));
+                xhr.send(JSON.stringify({"totalAmount": item, "date": "2020-08-01"}));
             }
             $(document).ready(function () {
                 postPaypalAmount();

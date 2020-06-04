@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Qualifier("userDetailsServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
-    
+
     @Autowired
     AuthenticationSuccessHandler successHandler;
 
@@ -35,8 +35,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/static/**", "/registration", "/welcome","/eshop","/chat/**","/","/login","/contact").permitAll()
-                .antMatchers("/product/**","/address/**","/user/**","/mtype/**","/category/**").hasRole("ADMIN")
+                .antMatchers("/static/**", "/registration", "/welcome", "/eshop", "/chat/**", "/", "/login", "/contact", "/welcome").permitAll()
+                .antMatchers("/product/**", "/address/**", "/user/**", "/mtype/**", "/category/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -66,7 +66,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, "/orderrest")
                 .antMatchers(HttpMethod.POST, "/ws/**")
                 .antMatchers(HttpMethod.GET, "/ws/**");
-        
 
     }
 }

@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -117,7 +117,7 @@
             <div class="mapouter">
                 <div class="gmap_canvas">
                     <iframe width="500" height="310" id="gmap_canvas" src="https://maps.google.com/maps?q=panepistimiou%2039&t=&z=19&ie=UTF8&iwloc=&output=embed" frameborder="0"
-                        scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            scrolling="no" marginheight="0" marginwidth="0"></iframe>
                 </div>
             </div>
         </div>

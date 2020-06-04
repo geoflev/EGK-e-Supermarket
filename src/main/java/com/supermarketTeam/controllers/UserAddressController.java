@@ -24,7 +24,6 @@ public class UserAddressController {
     private UserService userService;
     @Autowired
     private AddressServiceImpl service;
-    
 
     @RequestMapping(value = "/useraddress/{email}", method = RequestMethod.GET)
     public String editUserAddress(ModelMap view, @PathVariable String email) {
@@ -55,7 +54,7 @@ public class UserAddressController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         UserDetails userDetail = (UserDetails) auth.getPrincipal();
         User u = userService.findByUsername(userDetail.getUsername());
-        return "redirect:/useraddress/"+ u.getEmail();
+        return "redirect:/useraddress/" + u.getEmail();
     }
 
 }

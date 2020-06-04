@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-       <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+    <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <head>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
@@ -13,28 +13,28 @@
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
         <title>Address</title>
         <jsp:include page="headerWithShopCart.jsp" />
-         <style>
+        <style>
             h2{
                 font-size: 16px;
                 margin : auto;
                 font-weight:700;
-               text-align: center;
+                text-align: center;
             }
-             .generic-container
+            .generic-container
             {
                 width: 60%;
                 margin-left: 280px;
                 font-size: 14px !important; 
             }
-             #errorpc{
+            #errorpc{
                 color: red;
                 font-size: 12px;
             }
             #errortel{
-               color: red;
+                color: red;
                 font-size: 12px; 
             }
-            
+
         </style>
     </head>
     <body>
@@ -44,7 +44,7 @@
             <h2>Delivery Address</h2>
             <br>
             <form:form   method="POST" action="${user.email}" modelAttribute="address" class="form-horizontal">
-                 <div class="row" hidden>
+                <div class="row" hidden>
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="id">ID</label>
                         <div class="col-md-7">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                  <div class="row">
+                <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="telephone">Telephone</label>
                         <div class="col-md-7">
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                 </div>    
-                 <div class="row">
+                <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="text">Instructions</label>
                         <div class="col-md-7">
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-             
+
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form:form>
         </div>

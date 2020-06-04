@@ -11,8 +11,8 @@
         <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
         <title>Category List</title>
-        
-         <style>
+
+        <style>
             .panel-default
             {
                 width: 40%;
@@ -25,33 +25,32 @@
     <body>
         <br>
         <br>
-            <div class="panel panel-default">
-                <div class="panel-heading"><span class="lead">Category's List</span></div>
-                <table class="table table-hover">
-                    <thead id="thead">
-                        <tr>                          
-                            <th>Category</th>
-                            <th width="100"></th>
-                            <th width="100"></th>
+        <div class="panel panel-default">
+            <div class="panel-heading"><span class="lead">Category's List</span></div>
+            <table class="table table-hover">
+                <thead id="thead">
+                    <tr>                          
+                        <th>Category</th>
+                        <th width="100"></th>
+                        <th width="100"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${categories}" var="category">
+                        <tr>
+                            <td hidden>${category.id}</td>
+                            <td>${category.categoryName}</td>
+                            <td><a href="<c:url value='/category/edit/${category.id}' />" class="btn btn-warning custom-width">Edit</a></td>
+                            <td><a href="<c:url value='/category/delete/${category.id}' />" class="btn btn-danger custom-width">Delete</a></td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${categories}" var="category">
-                            <tr>
-                                <td hidden>${category.id}</td>
-                                <td>${category.categoryName}</td>
-                                <td><a href="<c:url value='/category/edit/${category.id}' />" class="btn btn-warning custom-width">Edit</a></td>
-                                <td><a href="<c:url value='/category/delete/${category.id}' />" class="btn btn-danger custom-width">Delete</a></td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                    <div class="well">
-                        <td><a href="<c:url value='/category/new' />" class="btn btn-primary custom-width" id="submitbtn" >Add</a></td>
-                    </div>
-                </table>
-            </div>
-
+                    </c:forEach>
+                </tbody>
+                <div class="well">
+                    <td><a href="<c:url value='/category/new' />" class="btn btn-primary custom-width" id="submitbtn" >Add</a></td>
+                </div>
+            </table>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-       </body>
+    </body>
 </html>

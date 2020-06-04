@@ -1,12 +1,9 @@
 package com.supermarketTeam.controllers;
 
-import com.supermarketTeam.entities.Role;
 import java.util.List;
 import javax.validation.Valid;
 import com.supermarketTeam.entities.User;
 import com.supermarketTeam.services.UserServiceImpl;
-import java.util.Collection;
-import java.util.Iterator;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -30,7 +30,7 @@
                 font-size: 12px;
             }
             #errorln{
-               color: red;
+                color: red;
                 font-size: 12px; 
             }
         </style>
@@ -109,7 +109,7 @@
                     messagesln.push("Last Name cannot contain numbers")
                     errorElementln.innerText = messagesln;
                 }
-                
+
             })
         </script>
     </body>

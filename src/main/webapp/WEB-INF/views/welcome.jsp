@@ -1,7 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,13 +23,11 @@
             .d-block {
                 width: 100%;
             }
-
             .carousel-inner {
                 width: 100%;
                 max-height: 400px !important;
                 margin : auto;
             }
-
             .jumbotron {
                 background-image: url("http://localhost:8084/ProductBoot/static/img/manabiko.jpg");
                 background-size: cover;
@@ -46,7 +43,7 @@
                 font-weight: bold;
             }
             .jumbotron .who{
-              font-style: italic;
+                font-style: italic;
                 font-size: 20px;  
             }
             body{

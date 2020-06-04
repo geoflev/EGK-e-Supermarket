@@ -13,11 +13,8 @@
         <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="<c:url value='/static/css/toggleswitch.css'/>">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <!--LESS-->
         <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
         <link rel="stylesheet/less" type="text/css" href="styles.less" />
-
-        <!--BOOTSTRAP-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
               integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
         <link rel="stylesheet" href="<c:url value='/static/css/productcss.css'/>">
@@ -48,7 +45,6 @@
             }
 
         </style>
-
     </head>
     <body>
         <div class="navig">
@@ -83,9 +79,6 @@
                 </div>
             </nav>
         </div>
-
-
-        <!--NAVBAR ENDS-->
         <div class="filterChoices">
             <button class="btn btn-light" id="sortPerPrice">Price &darr;</button>
             <button class="btn btn-light" id="sortPerPriceAsc">
@@ -109,8 +102,6 @@
                 <div><a href="#" onclick="filterBy('Alcohol Drinks')">Alcohol</a></div>
                 <div><a href="#" onclick="filterBy('Cleaning')">Cleaning</a></div>       
             </div>
-
-            <!-- Nav -->
             <nav id="cartSize" class="navbar navbar-inverse bg-inverse fixed-top bg-faded">
                 <div class="row cartClearCart">
                     <div class="col">
@@ -121,7 +112,6 @@
                     </div>
                 </div>
             </nav>
-            <!-- Modal -->
             <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -173,7 +163,6 @@
             crossorigin="anonymous"
         ></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
         <script src="<c:url value='/static/js/code.js'/>" type="text/javascript"></script>
         <script src="<c:url value='/static/js/dataFunctions.js'/>" type="text/javascript"></script>
         <jsp:include page="footer.jsp" />
