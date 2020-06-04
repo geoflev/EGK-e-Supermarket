@@ -17,7 +17,7 @@ import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@Table(name = "addresses", catalog = "supermarket", schema = "")
+@Table(name = "addresses", catalog = "supermarket2", schema = "")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Address.findAll", query = "SELECT a FROM Address a")

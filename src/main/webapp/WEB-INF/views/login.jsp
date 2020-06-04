@@ -25,6 +25,7 @@
            #register a{
                color:#286090;
            }
+
        </style>
   </head>
 

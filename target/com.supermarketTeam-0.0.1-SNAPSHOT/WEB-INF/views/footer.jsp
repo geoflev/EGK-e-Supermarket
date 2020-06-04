@@ -178,6 +178,9 @@
                 color:#fff;
                 font-size:16px;
             }
+            #subbtn{
+                background-color: white;
+            }
             
         </style>
     </head>
@@ -224,7 +227,7 @@
                             <div class="form-group clearfix">
                                 <label for="newsletterEmail" class="hidden"></label>
                                 <input name="email" type="email" id="newsletterEmail" class="email  col-xs-60" placeholder="Email*">
-                                <input class="btn mt-3" type="submit" value="Subscribe">
+                                <input id="subbtn" class="btn mt-3" type="submit" value="Subscribe">
                                 <p class="message-error hidden"></p>
                             </div>
                            

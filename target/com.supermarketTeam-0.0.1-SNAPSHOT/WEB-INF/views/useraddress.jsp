@@ -13,12 +13,36 @@
         <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
         <title>Address</title>
         <jsp:include page="headerWithShopCart.jsp" />
+         <style>
+            h2{
+                font-size: 16px;
+                margin : auto;
+                font-weight:700;
+               text-align: center;
+            }
+             .generic-container
+            {
+                width: 60%;
+                margin-left: 280px;
+                font-size: 14px !important; 
+            }
+             #errorpc{
+                color: red;
+                font-size: 12px;
+            }
+            #errortel{
+               color: red;
+                font-size: 12px; 
+            }
+            
+        </style>
     </head>
     <body>
         <br>
         <br>
         <div class="generic-container">
-            
+            <h2>Delivery Address</h2>
+            <br>
             <form:form   method="POST" action="${user.email}" modelAttribute="address" class="form-horizontal">
                  <div class="row" hidden>
                     <div class="form-group col-md-12">

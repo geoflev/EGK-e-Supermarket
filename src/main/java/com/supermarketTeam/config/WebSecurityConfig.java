@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/static/**", "/registration", "/welcome","/eshop","/chat","/","/login","/contact").permitAll()
+                .antMatchers("/static/**", "/registration", "/welcome","/eshop","/chat/**","/","/login","/contact").permitAll()
                 .antMatchers("/product/**","/address/**","/user/**","/mtype/**","/category/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
@@ -63,7 +63,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring()
                 .antMatchers(HttpMethod.GET, "/productrest/")
                 .antMatchers(HttpMethod.POST, "/useraddress/pay**")
-                .antMatchers(HttpMethod.POST, "/orderrest");
+                .antMatchers(HttpMethod.POST, "/orderrest")
+                .antMatchers(HttpMethod.POST, "/ws/**")
+                .antMatchers(HttpMethod.GET, "/ws/**");
+        
 
     }
 }

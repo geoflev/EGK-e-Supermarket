@@ -5,6 +5,7 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
     <head>
+         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,6 +19,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12 text-center">
+                        <span> <i class="fas fa-check" style="font-size: 100px; color: green;"></i></span>
                         <span class="display-1 d-block">Thank You!</span>
                         <div class="mb-4 lead">Payment was successful!</div>
                         <a href="/ProductBoot/" class="btn btn-link">Back to Home</a>

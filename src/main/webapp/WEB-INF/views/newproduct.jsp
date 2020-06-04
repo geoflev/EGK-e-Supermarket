@@ -4,6 +4,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
     <head>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -135,6 +136,7 @@
                 let messagesQuan = [];
                 let messagesPrice = [];
                 var numbers = /^[0-9]+$/;
+                var double = /^-?(\d*\.)?\d*$/;
                 if (!quantity.value.match(numbers)) {
                     e.preventDefault();
                     messagesQuan.push("Invalid input for Quantity")
@@ -145,14 +147,14 @@
                     messagesQuan.push("Quantity cannot be 0!")
                     errorElementQuan.innerText = messagesQuan;
                 }
-                if (!price.value.match(numbers)) {
+                if (!price.value.match(double)) {
                     e.preventDefault();
                     messagesPrice.push("Invalid input for Price")
                     errorElementPrice.innerText = messagesPrice;
                 }
-                if (price.value === 0) {
+                if (price.value == 0.0 || price.value < 0) {
                     e.preventDefault();
-                    messagesPrice.push("Price cannot be 0!")
+                    messagesPrice.push("Price cannot be 0 or negative!")
                     errorElementPrice.innerText = messagesPrice;
                 }
                 

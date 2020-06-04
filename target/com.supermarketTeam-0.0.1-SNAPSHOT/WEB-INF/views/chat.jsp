@@ -13,7 +13,7 @@
              #backto{
                 position : absolute;
                 bottom: 27%;
-                left: 31%;
+                left: 14%;
                 right: 40%;
              }
          </style>
@@ -42,7 +42,7 @@
     <div id="chat-page" class="hidden">
         <div class="chat-container">
             <div class="chat-header">
-                <h2>Spring WebSocket Chat Demo</h2>
+                <h2>Customer Service</h2>
             </div>
             <div class="connecting">
                 Connecting...

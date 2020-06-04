@@ -43,7 +43,7 @@
         <div class="generic-container">
             <h2>Register a new Address</h2>
             <br>
-            <form:form   method="POST" action="new" modelAttribute="address" class="form-horizontal">
+            <form:form  id="form" method="POST" action="new" modelAttribute="address" class="form-horizontal">
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="addressName">Address</label>
@@ -73,6 +73,7 @@
                         <label class="col-md-3 control-lable" for="postcode">Post Code</label>
                         <div class="col-md-7">
                             <form:input type="text" path="postcode" class="form-control input-sm" maxlength="12" required="required"/>
+                            <div id="errorpc"></div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +82,7 @@
                         <label class="col-md-3 control-lable" for="telephone">Telephone</label>
                         <div class="col-md-7">
                             <form:input type="text" path="telephone" class="form-control input-sm" maxlength="12" required="required"/>
+                            <div id="errortel"></div>
                         </div>
                     </div>
                 </div>    
@@ -92,7 +94,7 @@
                         </div>
                     </div>
                 </div>        
-                <div class="row" hidden="">
+                <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-3 control-lable" for="userId.id">User ID</label>
                         <div class="col-md-7">

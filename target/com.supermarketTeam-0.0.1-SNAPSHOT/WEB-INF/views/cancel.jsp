@@ -5,21 +5,21 @@
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
     <head>
+         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="icon" type="image/png" href="<c:url value='/static/img/favicon-16x16.png' />"   >  
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="<c:url value='/static/css/bootstrap.css' />" rel="stylesheet"></link>
-        <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="<c:url value='/static/css/error.css' />" rel="stylesheet">
         <title></title>
-        
     </head>
     <body>
         <div class="page-wrap d-flex flex-row align-items-center">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-12 text-center">
+                        <span> <i class="fas fa-frown" style="font-size: 100px; color: grey;"></i></span>
                         <span class="display-1 d-block">Oops!</span>
                         <div class="mb-4 lead">Something went really wrong!</div>
                         <a href="/ProductBoot/" class="btn btn-link">Back to Home</a>
